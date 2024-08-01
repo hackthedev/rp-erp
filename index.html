@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="expires" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="popup.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Lagerverwaltungssystem</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lagerverwaltungssystem</h1>
+
+    <div id="nav_buttons">
+        <a onclick='loadPopupContent("rezepte.html", "rezepteAnzeigen")'>Rezepte</a>
+    </div>
+
+
+    <div>
+        <h2>Artikel hinzufügen</h2>
+        <div class="form-group">
+            <label for="artikelName">Artikelname:</label>
+            <input type="text" id="artikelName">
+        </div>
+        <div class="form-group">
+            <label for="anzahl">Anzahl:</label>
+            <input type="number" id="anzahl">
+        </div>
+        <div class="form-group">
+            <label for="gewicht">Gewicht (kg):</label>
+            <input type="number" id="gewicht" step="0.01">
+        </div>
+        <button onclick="artikelHinzufügen()">Hinzufügen</button>
+    </div>
+    <h2>Lagerbestand</h2>
+    <table id="lagerBestand">
+        <thead>
+            <tr>
+                <th>Artikelname</th>
+                <th>Anzahl</th>
+                <th>Gewicht (kg)</th>
+                <th>Gewicht gesamt (kg)</th>
+                <th>Aktionen</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Dynamischer Inhalt -->
+        </tbody>
+    </table>
+
+    <div id="popupContainer" class="popup">
+        <div class="popup-content">
+            <span class="close-button" id="closePopup">&times;</span>
+            <div id="popupContent"></div>
+        </div>
+    </div>
+
+
+    
+    <script defer src="script.js"></script>
+</body>
+</html>
